@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080f20">
+  <meta name="description" content="Cinematic LUTs by Avery Beuth, each shown with a photograph and its colour palette, plus a dedicated Apple Log comparison.">
+  <title>Colour Studies — Avery Beuth</title>
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="style.css?v=6">
+  <script defer src="scenes.js?v=4"></script>
+  <script defer src="zip.js?v=1"></script>
+  <script defer src="gallery.js?v=5"></script>
+</head>
+<body>
+  <header class="top">
+    <a href="https://averybeuth.xyz/">averybeuth.xyz</a>
+    <nav aria-label="Page"><a href="#gallery">Creative LUTs</a><a href="#apple-log">Apple Log</a><a href="#downloads">Downloads</a><a href="guides.html">Guides</a></nav>
+  </header>
+  <main>
+    <section class="opening" aria-labelledby="title">
+      <div class="depth" aria-hidden="true">
+        <img class="plate plate-left" src="images/5-original.webp" alt="">
+        <img class="plate plate-right" src="images/2-17.webp" alt="">
+        <img class="plate plate-centre" src="images/0-13.webp" alt="" fetchpriority="high">
+      </div>
+      <div class="opening-copy">
+        <p class="byline">Avery Beuth</p>
+        <h1 id="title"><span>Colour</span><span>Studies</span></h1>
+        <a class="explore" href="#gallery">Explore the grades</a>
+        <a class="explore guide-link" href="guides.html">Learn the workflow</a>
+      </div>
+    </section>
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="gallery-heading">
+        <h2 id="gallery-title">Creative LUTs</h2>
+        <p>Rec.709 looks, each with a photograph and its sampled palette.</p>
+      </div>
+      <div id="filters" class="filters" role="group" aria-label="Filter creative LUT packs"></div>
+      <div id="cards" class="cards"></div>
+    </section>
+    <section class="gallery download-section" id="downloads" aria-labelledby="downloads-title">
+      <div class="gallery-heading">
+        <h2 id="downloads-title">Downloads</h2>
+        <p>Pick a pack and format. <a class="inline-guide" href="guides.html#choose">Which LUT do I use?</a></p>
+      </div>
+      <div class="bundle-controls">
+        <label>Pack<select id="bundle-pack"></select></label>
+        <label>Format<select id="bundle-format"></select></label>
+        <button id="bundle-download" class="cube-download" type="button">Download ZIP</button>
+      </div>
+      <p id="bundle-status" role="status"></p>
+    </section>
+    <section class="gallery log-section" id="apple-log" aria-labelledby="log-title">
+      <div class="gallery-heading">
+        <h2 id="log-title">Apple Log</h2>
+        <p>Compare 22 Apple Log conversions on the same bear frame.</p>
+      </div>
+      <div class="editing">
+        <div class="viewer">
+          <div class="comparison" id="comparison">
+            <img id="base" alt="">
+            <img id="grade" alt="" aria-hidden="true">
+            <div class="divider" aria-hidden="true"><span>‹ ›</span></div>
+            <span class="image-label original">Original</span>
+            <span class="image-label graded">Graded</span>
+            <input id="split" type="range" min="0" max="100" value="48" aria-label="Before-and-after divider">
+          </div>
+          <div class="under"><span id="selected-frame"></span><a id="download" download>Download image</a></div>
+        </div>
+        <aside aria-label="Colour grade">
+          <label for="pack">Pack</label>
+          <select id="pack"></select>
+          <label for="look">Look</label>
+          <select id="look"></select>
+          <p id="selected-look" class="selected-look"></p>
+          <button id="download-log" class="cube-download" type="button">Download .cube</button>
+          <p id="format">The source PNG is treated as log input.</p>
+          <p id="status" role="status"></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer><a href="https://averybeuth.xyz/">Avery Beuth</a><a href="#title">Back to top</a></footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080f20">
+  <meta name="description" content="A hands-on Premiere Pro beginner guide. Make a 30-second edit from raw footage to a finished MP4.">
+  <title>Premiere Pro from Scratch — Colour Studies</title>
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="guides.css?v=2">
+</head>
+<body class="guide-page">
+  <header class="top">
+    <a href="./">Colour Studies</a>
+    <nav aria-label="Site"><a href="guides.html">All guides</a><a href="guides.html#premiere-luts">LUT workflow</a><a href="./#downloads">Downloads</a></nav>
+  </header>
+  <main>
+    <section class="guide-opening premiere-opening" aria-labelledby="page-title">
+      <img src="images/0-13.webp" alt="" fetchpriority="high">
+      <div>
+        <h1 id="page-title">Premiere Pro<br>from scratch</h1>
+        <p>Cut a 30-second film from your own footage. Learn the tools in the order you’ll use them.</p>
+      </div>
+    </section>
+    <div class="guide-layout">
+      <nav class="guide-index" aria-label="On this page">
+        <a href="#setup">Set up your project</a>
+        <a href="#assemble">Build the rough cut</a>
+        <a href="#trim">Trim and reframe</a>
+        <a href="#sound">Mix sound and add text</a>
+        <a href="#colour">Correct colour</a>
+        <a href="#export">Export and check</a>
+        <a href="#rescue">Fix common problems</a>
+      </nav>
+      <div class="guide-content">
+        <article id="setup" aria-labelledby="setup-title">
+          <h2 id="setup-title">Set up your project</h2>
+          <p>Use five clips from the same place or activity. Gather an establishing shot, two details, a shot with movement and a closing shot. If the footage has no usable sound, record ten seconds of the location for ambience.</p>
+          <ol>
+            <li><strong>Make a project folder.</strong> Create folders for original media, audio, Premiere projects and exports. Copy the camera files into the media folder before importing. Premiere links to them on disk, so keep the originals backed up.</li>
+            <li><strong>Import and organise.</strong> Create a new project, then use <b>File › Import</b> or drag the files into the Project panel. Create bins for Footage, Audio and Sequences. Give the edit a name such as <code>Street Study 01</code>.</li>
+            <li><strong>Make your sequence.</strong> Drag a representative clip to the Project panel’s <b>New Item</b> icon. In <b>Sequence › Sequence Settings</b>, verify the frame size and frame rate. For a first landscape project, matching your main clip is a useful starting point.</li>
+          </ol>
+          <dl class="lut-choice">
+            <div><dt>Project panel</dt><dd>Your linked media, bins and sequences.</dd></div>
+            <div><dt>Source Monitor</dt><dd>Preview and mark a single clip before adding it.</dd></div>
+            <div><dt>Timeline</dt><dd>Arrange clips and control which tracks play together.</dd></div>
+            <div><dt>Program Monitor</dt><dd>Watch the sequence as the viewer will see it.</dd></div>
+          </dl>
+          <p class="guide-sources"><a href="https://helpx.adobe.com/premiere/desktop/get-started/source-and-program-monitor-adjustments/about-source-monitor-and-program-monitor.html">Adobe’s monitor overview</a><a href="https://helpx.adobe.com/premiere/desktop/edit-projects/change-clip-sequence/create-a-sequence.html">Create a sequence</a></p>
+        </article>
+        <article id="assemble" aria-labelledby="assemble-title">
+          <h2 id="assemble-title">Build the rough cut</h2>
+          <ol>
+            <li><strong>Pull selects.</strong> Double-click a source clip. Shuttle with <kbd>J</kbd>, <kbd>K</kbd> and <kbd>L</kbd>, then press <kbd>I</kbd> at the start and <kbd>O</kbd> at the end of the usable action. Put that range onto the timeline.</li>
+            <li><strong>Lay out the main story.</strong> Start on V1 and A1. Try four seconds of the location, then a detail, the main action and a final frame. Aim for 30 seconds after trimming. Put optional cutaways on V2 so they can cover the main picture while its sound continues on A1.</li>
+            <li><strong>Try two ways to place a clip.</strong> With the source tracks patched and the timeline playhead at the edit point, <kbd>,</kbd> inserts the marked range and shifts later material on affected tracks. <kbd>.</kbd> overwrites the affected range for the duration of the new shot. Practise both on a duplicate sequence so you can see the difference.</li>
+          </ol>
+          <p class="guide-note">Mute the music on your first review. The sequence should still make sense from the order of the shots and the movement within them.</p>
+          <p class="guide-sources"><a href="https://helpx.adobe.com/premiere/desktop/edit-projects/intro-to-editing/add-media-to-the-timeline-using-source-patching.html">Source patching, Insert and Overwrite</a></p>
+        </article>
+        <article id="trim" aria-labelledby="trim-title">
+          <h2 id="trim-title">Trim and reframe</h2>
+          <ol>
+            <li><strong>Clean up each cut.</strong> With the Selection tool <kbd>V</kbd>, drag the clip edge to change its In or Out. Use Ripple Edit <kbd>B</kbd> when you want later material to move with the trim. Play across the cut after changing it to catch gaps and repeated movements.</li>
+            <li><strong>Keep the action readable.</strong> Try cutting from a wide shot to a closer angle as the action starts. If the cut feels abrupt, move it a few frames or bridge it with continuous ambience. Use transitions where a change in time or place calls for one.</li>
+            <li><strong>Reframe in Effect Controls.</strong> Select the clip and adjust <b>Motion › Position</b> and <b>Scale</b>. To add a slow push-in, enable keyframes for Scale at the start, move the playhead and raise Scale slightly. Keep the important subject in frame throughout the move.</li>
+          </ol>
+          <p class="guide-sources"><a href="https://helpx.adobe.com/premiere/desktop/get-started/keyboard-shortcuts/default-keyboard-shortcuts.html">Default Premiere shortcuts</a></p>
+        </article>
+        <article id="sound" aria-labelledby="sound-title">
+          <h2 id="sound-title">Mix sound and add text</h2>
+          <ol>
+            <li><strong>Separate the tracks.</strong> Put dialogue or main location sound on A1, ambience on A2 and music on A3. Solo tracks to diagnose unwanted noise. Adjust clip gain or volume so speech stays intelligible and the mix never clips.</li>
+            <li><strong>Smooth the edges.</strong> Add a short audio crossfade where two clips meet. Let the next shot’s sound begin early or let the old shot’s sound continue over the cut. Listen for continuity as well as level.</li>
+            <li><strong>Add one simple title.</strong> Use the Type tool <kbd>T</kbd>, click the Program Monitor and enter the title. Adjust it in <b>Properties</b> and trim the graphic in the timeline. For speech, create captions from the final transcript and proofread names and timing.</li>
+          </ol>
+          <p><a class="inline-guide" href="guides.html#premiere-finish">More on Essential Sound, captions and export</a></p>
+        </article>
+        <article id="colour" aria-labelledby="colour-title">
+          <h2 id="colour-title">Correct colour</h2>
+          <ol>
+            <li><strong>Confirm the source.</strong> Check whether the footage is Apple Log, Apple Log 2, or already Rec.709. Use the <a class="inline-guide" href="guides.html#premiere-luts">Premiere LUT guide</a> to set up an SDR sequence and choose one conversion.</li>
+            <li><strong>Match adjacent shots.</strong> Open Lumetri Color and look at exposure and white balance before adding a look. Use the waveform to spot clipped highlights and RGB Parade to inspect a tint. Match the shots next to each other in the timeline.</li>
+            <li><strong>Add a creative look.</strong> For normalized Rec.709 footage, choose a creative <code>.cube</code> in <b>Lumetri › Creative › Look</b>. Try 50% intensity. Toggle the effect so you can see which colours or tones it changes.</li>
+          </ol>
+          <p><a class="guide-action" href="./#downloads">Browse LUT downloads</a></p>
+        </article>
+        <article id="export" aria-labelledby="export-title">
+          <h2 id="export-title">Export and check</h2>
+          <ol>
+            <li><strong>Open Export.</strong> Select the sequence and press <kbd>Ctrl</kbd>+<kbd>M</kbd> on Windows or <kbd>⌘</kbd>+<kbd>M</kbd> on macOS. Choose <b>H.264</b> and start with <b>Match Source – Adaptive High Bitrate</b> for a review MP4.</li>
+            <li><strong>Check the output.</strong> Verify the frame size, frame rate, Rec.709 output, and that both video and audio are enabled. Set the range to the entire sequence for a full export. Name the file <code>Street Study 01.mp4</code> and export it into the Exports folder.</li>
+            <li><strong>Watch the MP4.</strong> Check the opening, the final frame, gaps, sync, captions and overall loudness. For delivery, use the platform’s or client’s requested settings.</li>
+          </ol>
+          <p class="guide-sources"><a href="https://helpx.adobe.com/premiere/desktop/render-and-export/export-files/basic-video-settings.html">Adobe’s export settings</a></p>
+        </article>
+        <article id="rescue" aria-labelledby="rescue-title">
+          <h2 id="rescue-title">Fix common problems</h2>
+          <details><summary>Media Offline appears</summary><p>Reconnect the original drive. Select the missing clip in the Project panel, choose <b>Link Media</b> and locate the corresponding original. Check the file name and folder before relinking.</p></details>
+          <details><summary>Playback stutters</summary><p>Try lower Program Monitor playback resolution first. If the originals still struggle, make proxies from the Project panel and use Toggle Proxies while editing. Keep the originals connected when exporting.</p></details>
+          <details><summary>Insert drops video without sound</summary><p>Check the source patch indicators at the left of the timeline. Make sure an audio source is patched to an available, unlocked audio track and that the clip contains audio.</p></details>
+          <details><summary>The exported shot looks much darker</summary><p>Import the export back into Premiere and compare the same frame with your timeline. Check the output colour space, source interpretation and whether the same LUT was applied twice.</p></details>
+          <p><a class="guide-action secondary" href="guides.html">Browse all guides</a></p>
+        </article>
+      </div>
+    </div>
+  </main>
+  <footer><a href="./">Colour Studies</a><a href="#page-title">Back to top</a></footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080f20">
+  <meta name="description" content="Learn to shoot with Blackmagic Camera, grade with Colour Studies LUTs, and edit and export in Premiere Pro and DaVinci Resolve.">
+  <title>Guides — Colour Studies</title>
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="guides.css">
+</head>
+<body class="guide-page">
+  <header class="top">
+    <a href="./">Colour Studies</a>
+    <nav aria-label="Site"><a href="./#gallery">Creative LUTs</a><a href="./#downloads">Downloads</a><a href="guides.html" aria-current="page">Guides</a></nav>
+  </header>
+  <main>
+    <section class="guide-opening" aria-labelledby="page-title">
+      <img src="images/0-13.webp" alt="" fetchpriority="high">
+      <div>
+        <h1 id="page-title">Guides</h1>
+        <p>From the camera app to the final export. Learn to shoot, edit and grade your own footage.</p>
+      </div>
+    </section>
+    <div class="guide-layout">
+      <nav class="guide-index" aria-label="On this page">
+        <a href="#choose">Choose a LUT</a>
+        <a href="#camera">Blackmagic Camera</a>
+        <a href="#premiere-luts">LUTs in Premiere Pro</a>
+        <a href="#resolve-luts">LUTs in DaVinci Resolve</a>
+        <a href="#premiere-edit">Your first Premiere edit</a>
+        <a href="premiere.html">Premiere Pro from scratch</a>
+        <a href="#premiere-finish">Sound, captions and export</a>
+        <a href="#fixes">Troubleshooting</a>
+      </nav>
+      <div class="guide-content">
+        <article id="choose" aria-labelledby="choose-title">
+          <h2 id="choose-title">Choose a LUT</h2>
+          <p>Start with the clip’s recording profile. A conversion LUT turns camera log into SDR Rec.709. A creative LUT assumes the image is already in Rec.709 and changes its look.</p>
+          <dl class="lut-choice">
+            <div><dt>Rec.709 footage or already converted to Rec.709</dt><dd>Use a <strong>Rec.709 creative</strong> LUT. Try Cobalt City for a blue night exterior or Honey Light for warm daylight.</dd></div>
+            <div><dt>Unconverted Apple Log 2</dt><dd>Use <strong>Apple Log 2 to Rec.709</strong> for a neutral base, or pick a one-step look such as <strong>Apple Log 2 to Rec.709 – Sunwashed</strong>.</dd></div>
+            <div><dt>Unconverted original Apple Log</dt><dd>Use <strong>Apple Log to Rec.709</strong>, then add a separate creative LUT if you want a look.</dd></div>
+            <div><dt>HLG, PQ or another camera’s log</dt><dd>Use the matching camera or HDR transform to Rec.709 first. Then apply a Rec.709 creative LUT.</dd></div>
+          </dl>
+          <p class="guide-note">For control over intensity, use a neutral conversion once, then mix in a separate creative look. The one-step Apple Log looks already contain the conversion.</p>
+          <p><a class="guide-action" href="./#downloads">Find a LUT pack</a> <a class="guide-action secondary" href="./#apple-log">Compare Apple Log looks</a></p>
+        </article>
+        <article id="camera" aria-labelledby="camera-title">
+          <h2 id="camera-title">Blackmagic Camera</h2>
+          <p>Set up the phone to capture a consistent image before you start grading.</p>
+          <ol>
+            <li><strong>Choose a recording profile.</strong> In <b>Settings › Record</b>, select Apple Log 2 if the option is available and you want to grade in post. If the phone offers original Apple Log, match that profile in the editor. For quick turnaround, choose Rec.709 where available. Recording options depend on the device and codec.</li>
+            <li><strong>Pick resolution and frame rate.</strong> Try 4K at 25 fps for an SDR project in New Zealand. Under mains-powered lights, start at 180° shutter (1/50 s at 25 fps) and record a short test for flicker. Choose a codec your phone and editor handle comfortably. ProRes can take substantially more storage than HEVC.</li>
+            <li><strong>Set focus, white balance and exposure.</strong> Tap the controls in the camera HUD. Lock focus and white balance for a stable shot when the scene allows it. Use focus assist to check the subject and zebras or false colour to check bright areas. At night, watch the illuminated signs and keep enough light on the subject.</li>
+            <li><strong>Preview a LUT.</strong> Save and unzip the pack in Files. In the app’s <b>LUTs</b> settings, use <b>Import LUT</b>, select a matching conversion, and enable <b>Display LUT</b>. Leave <b>Record LUT to Clip</b> off if you want ungraded log files for editing.</li>
+            <li><strong>Check and transfer a test clip.</strong> Verify framing, flicker, focus and sound on a 10-second recording. In <b>Media</b>, share or copy the original files to your editing drive. Keep the originals together before importing them into the editor.</li>
+          </ol>
+          <p class="guide-sources"><a href="https://www.blackmagicdesign.com/products/blackmagiccamera/techspecs">Blackmagic Camera settings and device support</a></p>
+        </article>
+        <article id="premiere-luts" aria-labelledby="premiere-luts-title">
+          <h2 id="premiere-luts-title">LUTs in Premiere Pro</h2>
+          <ol>
+            <li><strong>Set up the sequence for SDR.</strong> In <b>Sequence › Sequence Settings › Color</b>, choose <b>Direct 709 (SDR)</b> if available and check the output is Rec.709. Open <b>Window › Lumetri Color</b>.</li>
+            <li><strong>Check the source clip.</strong> Open <b>Lumetri Color › Settings › Source Clip</b> or right-click the source in the Project panel and open <b>Modify › Color</b>. Confirm the source profile. If Premiere already interprets and converts the log clip, proceed to the creative look.</li>
+            <li><strong>Manual conversion option.</strong> To use a Colour Studies conversion, select the matching file in the <b>Source Clip › Input LUT</b> controls and set its resulting media colour space to <b>Rec.709</b>. This treats the LUT’s output as Rec.709. Leave <b>Preserve RGB</b> off in this workflow and avoid adding the same conversion again under Basic Correction.</li>
+            <li><strong>Balance, then style.</strong> Select the timeline clip and use <b>Edit › Basic Correction</b> in Lumetri for temperature, tint and exposure. For a creative grade, use <b>Creative › Look › Browse</b> to choose a Rec.709 <code>.cube</code>. Try roughly 50% intensity first, then check the image and Lumetri Scopes. A one-step conversion already applies a look.</li>
+          </ol>
+          <p class="guide-note">For a shared look across several already-balanced Rec.709 clips, apply the creative LUT to an adjustment layer above them. Keep clip-specific exposure and white balance on the clips.</p>
+          <p class="guide-sources"><a href="https://helpx.adobe.com/premiere/desktop/correct-color/set-up-color-management/color-management-using-clip-modify.html">Adobe’s source clip settings</a><a href="https://helpx.adobe.com/premiere/desktop/correct-color/add-color-effects/apply-lumetri-looks.html">Lumetri looks and intensity</a></p>
+        </article>
+        <article id="resolve-luts" aria-labelledby="resolve-title">
+          <h2 id="resolve-title">LUTs in DaVinci Resolve</h2>
+          <ol>
+            <li><strong>Install the files.</strong> Unzip your download. Open <b>Project Settings › Color Management › Lookup Tables › Open LUT Folder</b>. Copy the <code>.cube</code> files into a Colour Studies folder, then click <b>Update Lists</b> in Resolve.</li>
+            <li><strong>Choose one conversion path.</strong> For a straightforward manual setup, use <b>DaVinci YRGB</b> and a Rec.709 SDR grading and viewing setup. On the <b>Color</b> page, right-click a node, open <b>LUT</b>, and choose the conversion that matches unconverted Apple Log or Log 2 footage. With Resolve Color Management already converting the shot, skip the conversion LUT. In wide-gamut workflows, reserve these creative LUTs for a point where the signal is Rec.709, such as a separate Rec.709 finishing pass.</li>
+            <li><strong>Give each adjustment a node.</strong> For log footage in a manual workflow, use one node to balance exposure and white balance, the next for the conversion, and the last for a creative Rec.709 LUT. On footage that is already Rec.709, balance it and apply the creative look on its own node.</li>
+            <li><strong>Control the blend.</strong> Select the creative node, open the <b>Key</b> palette, and reduce <b>Output Gain</b>, for example to <b>0.50</b>. Toggle the node to compare and use the waveform and RGB parade to see what happens to the bright areas and shadows.</li>
+          </ol>
+          <p class="guide-sources"><a href="https://documents.blackmagicdesign.com/UserManuals/DaVinciResolveReferenceManual.pdf">Resolve reference manual</a><a href="https://documents.blackmagicdesign.com/UserManuals/DaVinci-Resolve-20-Colorist-Guide.pdf">Blackmagic’s Colorist Guide</a></p>
+        </article>
+        <article id="premiere-edit" aria-labelledby="edit-title">
+          <h2 id="edit-title">Your first Premiere edit</h2>
+          <ol>
+            <li><strong>Set up the project.</strong> Make a folder for media, audio, projects and exports. Back up the camera originals, then create a Premiere project. Import your clips and sort them into bins. Keep the source files in place so Premiere can find them.</li>
+            <li><strong>Make a sequence.</strong> Drag your main clip onto the <b>New Item</b> icon in the Project panel to start with matching settings. Check frame rate and frame size. For vertical delivery, create a 9:16 sequence and reframe each shot deliberately.</li>
+            <li><strong>Build a rough cut.</strong> Open a clip in the Source Monitor, mark the start and end with <kbd>I</kbd> and <kbd>O</kbd>, and assemble the selects on the timeline. Put the main action or dialogue on the first video track and place cutaways above it. Get the story working before adding transitions.</li>
+            <li><strong>Tighten the timing.</strong> Drag a clip edge for a normal trim. Use the <b>Ripple Edit</b> tool to move later clips as you trim, or right-click a gap and select <b>Ripple Delete</b>. Check the tracks affected by the edit. Use <kbd>J</kbd>, <kbd>K</kbd> and <kbd>L</kbd> to shuttle backward, stop and play forward.</li>
+            <li><strong>Make playback manageable.</strong> Lower Program Monitor playback resolution if the timeline stutters. For heavy footage, select source clips in the Project panel and choose <b>Proxy › Create Proxies</b>. Use the <b>Toggle Proxies</b> button while editing and keep the full-resolution files linked for export.</li>
+          </ol>
+          <p class="guide-note">Try a 30-second practice cut. Use a wide shot to set the scene, a close detail, an action shot and a closing frame. A few seconds of room tone can help hide abrupt audio cuts.</p>
+          <p><a class="guide-action" href="premiere.html">Follow the full Premiere Pro walkthrough</a></p>
+          <p class="guide-sources"><a href="https://helpx.adobe.com/premiere/desktop/edit-projects/change-clip-sequence/create-a-sequence.html">Sequences</a><a href="https://helpx.adobe.com/premiere/desktop/get-started/keyboard-shortcuts/default-keyboard-shortcuts.html">Keyboard shortcuts</a><a href="https://helpx.adobe.com/premiere/desktop/organize-media/ingest-proxy-workflow/create-proxies.html">Proxies</a></p>
+        </article>
+        <article id="premiere-finish" aria-labelledby="finish-title">
+          <h2 id="finish-title">Sound, captions and export</h2>
+          <ol>
+            <li><strong>Mix dialogue first.</strong> Open <b>Window › Essential Sound</b> and tag speaking clips as <b>Dialogue</b>. Set an even level by ear and watch the meters for clipping. Bring music and ambience up under the dialogue, then listen back with headphones.</li>
+            <li><strong>Add and proof captions.</strong> Open the <b>Text</b> panel and generate a transcript for the final sequence. Create captions from that transcript, check names and spelling, and inspect their timing on the timeline. Choose burned-in captions for a version with permanent text or export an SRT if the destination supports it.</li>
+            <li><strong>Export a review MP4.</strong> Open <b>Export</b> with <kbd>Ctrl</kbd>+<kbd>M</kbd> on Windows or <kbd>⌘</kbd>+<kbd>M</kbd> on macOS. Use <b>H.264</b> and start with <b>Match Source – Adaptive High Bitrate</b>. Verify the intended frame size, rate, audio, source range and Rec.709 output. For a higher-quality archive, consider a separate ProRes master.</li>
+            <li><strong>Watch the exported file.</strong> Check the start and end, audio balance, captions and a few cuts in an ordinary media player. For colour problems, compare the export in Premiere as well so you can isolate display differences from the export itself.</li>
+          </ol>
+          <p class="guide-sources"><a href="https://helpx.adobe.com/uk/premiere/desktop/add-audio-effects/adjust-volume-and-levels/audio-editing-with-essential-sound-panel.html">Essential Sound</a><a href="https://helpx.adobe.com/premiere/desktop/add-text-images/insert-captions/auto-transcribe-video-using-speech-to-text.html">Speech to Text</a><a href="https://helpx.adobe.com/premiere/desktop/render-and-export/export-files/basic-video-settings.html">Export settings</a></p>
+        </article>
+        <article id="fixes" aria-labelledby="fixes-title">
+          <h2 id="fixes-title">Troubleshooting</h2>
+          <details><summary>My clip looks washed out</summary><p>Confirm its recording profile. If the image is still log, enable the matching colour-management transform or apply the matching conversion LUT. A creative Rec.709 LUT on its own expects a normalized image.</p></details>
+          <details><summary>Shadows are crushed or highlights clip</summary><p>Bypass the LUT and check whether the editor already converted the clip. A duplicate input conversion or a mismatch between Log and Log 2 can cause a big contrast or colour change. For a creative look, try less intensity and check the waveform.</p></details>
+          <details><summary>It looked different on my phone</summary><p>Check which LUT you used for monitoring and whether it was recorded to the clip. Also confirm the clip and sequence colour-space settings. A monitor preview and the final grade may use different transforms.</p></details>
+          <details><summary>The LUT does not appear in the editor</summary><p>Unzip the download and select a <code>.cube</code> file. In Resolve use <b>Update Lists</b> after copying it. In Premiere use <b>Browse</b> in the appropriate Lumetri menu.</p></details>
+          <p><a class="guide-action" href="./#downloads">Download LUTs</a></p>
+        </article>
+      </div>
+    </div>
+  </main>
+  <footer><a href="./">Colour Studies</a><a href="#page-title">Back to top</a></footer>
+</body>
+</html>
